@@ -2,7 +2,7 @@
 include("api.php");
 require("Toro.php");
 
-// /
+// 
 class RootHandler {
     function get() {
       echo "Follow The Data API v0.9. 04052013<br/>";
@@ -11,6 +11,14 @@ class RootHandler {
       echo "- /country: info by country<br/>";
       echo "- /company: info by company<br/>";
       echo "- /value: search country and companies by value range<br/>"; 
+    }
+}
+
+// /example
+class getExampleHandler {
+    function get() {
+
+      
     }
 }
 
@@ -26,7 +34,16 @@ class getXBRLHandler {
 class getCountryHandler {
     function get() {
       //header('Access-Control-Allow-Origin: *');
-      print "Countries available";
+      
+      $m = new MongoClient("mongodb://178.79.162.184");
+      $db = $m->followthedata;
+      $cursor = $db->countries->find(array(), array("name" => 1));
+      
+        $dict = array();
+        foreach ($cursor as $document) {
+                $dict[] = $document;
+        }
+        print json_encode($dict);
     }
 }
 
@@ -84,6 +101,8 @@ class getCompanyByValueDataRangeHandler {
 Toro::serve(array(
     "/" => "RootHandler",
     "/xbrl" => "getXBRLHandler",
+
+    "/example" => "getExampleHandler",
 
     "/country" => "getCountryHandler",
     "/country/:string" => "getCountryDataHandler",

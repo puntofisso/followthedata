@@ -1,5 +1,13 @@
 <?php
 
+
+function returnJSON($name) {
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: *');
+$filecontents = file_get_contents("/docs/".$name);
+print "FILE".$filecontents."$name";
+}
+
 function returnXBRL() {
 $xbrl='
 <?xml version="1.0" encoding="UTF-8"?>
