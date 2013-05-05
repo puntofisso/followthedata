@@ -1,0 +1,3 @@
+[submodule "ftdCruncher"]
+	path = ftdCruncher
+	url = git://github.com/kfouwels/ftdCruncher
