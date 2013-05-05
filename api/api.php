@@ -25,7 +25,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
         decimals="0" unitRef="EUR">10430000000</ifrs-gp:OtherOperatingIncomeTotalByNature>
     <xbrli:context id="BJ2004">
         <xbrli:entity>
-            <xbrli:identifier scheme="www.iqinfo.com/xbrl">It\'s the LAW!!!</xbrli:identifier>
+            <xbrli:identifier scheme="www.iqinfo.com/xbrl">US Law will define what to return in the next year or so.</xbrli:identifier>
         </xbrli:entity>
         <xbrli:period>
             <xbrli:instant>2004-01-01</xbrli:instant>

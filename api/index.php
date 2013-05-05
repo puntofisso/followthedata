@@ -33,7 +33,7 @@ class getXBRLHandler {
 // /all
 class getAllHandler {
     function get() {
-
+      header('Content-type: application/json');
       $query = "SELECT id,name from countries;";
       $result = mySQLquery($query);
       $all = array();
