@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <link rel="stylesheet" href="css/styles.css"/>
+        <link rel="stylesheet" href="css/flat-ui.css"/>
+        <link rel="stylesheet" href="css/bootstrap.css"/>
+            <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script>
+
+            //value
+            function ChangeAction(url, formname) {
+                var apicall = "http://liverugbydata.com/followthedata/api/" + url;
+                window.location.href = apicall;
+            }
+
+            </script>
+    </head>
+   
+    
+     <body>
+        <h1>Follow the Data API Documentation.</h1>
+        
+
+        <!--/-->
+        <div class="boxcontainer">
+
+            <div class="right">
+                <div class="quote" id="slash">Root endpoint. It returns unstructured information about version and available endpoints.</div>
+            </div>
+
+            <div class="bigassbutton">
+                <a onclick="toggle_visibility('slash');">/</a>
+                <div class="right"></div>
+            </div>
+
+        </div>
+
+         <!--XBRL-->
+        <div class="boxcontainer">
+
+            <div class="right">
+                <div class="quote" id="xbrl">
+                    This endpoint will return, when made available, structured information using the XBRL protocol, according to US Law requirements. Work in progress.
+                </div>
+            </div>
+
+            <div class="bigassbutton">
+                <a onclick="toggle_visibility('xbrl');">/xbrl</a>
+                <div class="right"></div>
+            </div>
+
+        </div>
+
+         <div class="boxcontainer">
+
+            <div class="right">
+                <div class="box fade-in one" id="countrycountry">
+                    <div class="quote">
+                         <form id="countrycountry" name="countrycountry">
+                            <input type="button" value="Try!" onClick="ChangeAction('country/', 'countryname');">
+                        </form>
+                        It returns a list of all countries for which some information is stored on the database.
+                    </div>
+                </div>
+            </div>
+
+            <div class="bigassbutton">
+                <a onclick="toggle_visibility('countrycountry');">/country</a>
+                <div class="right"></div>
+            </div>
+
+             </div>
+
+
+
+
+
+
+
+
+
+        <div class="boxcontainer">
+
+            <div class="right">
+                <div class="box fade-in one" id="country">
+                    <div class="quote">
+                         <form id="countryname" name="countryname">
+                            <input type="text" id="inputcountryname" name="inputcountryname" placeholder="countryname">
+                            <input type="button" value="Try!" onClick="ChangeAction('country/' + document.getElementById('inputcountryname').value, 'countryname');">
+                        </form>
+                        It returns all information available for the given country.
+                    </div>
+                </div>
+            </div>
+
+            <div class="bigassbutton">
+                <a onclick="toggle_visibility('country');">/country/{countryname}</a>
+                <div class="right"></div>
+            </div>
+
+        </div>
+
+
+         <div class="boxcontainer">
+
+            <div class="right">
+                <div class="box fade-in one" id="countrynameparam">
+                    <div class="quote">
+                         <form id="countrynameparam" name="countrynameparam">
+                             
+                            <input type="text" id="inputcountrynameparam" name="inputcountrynameparam" placeholder="countryname">
+                            <input type="text" id="commodity" name="commodity" placeholder="commodity">
+                            <input type="button" value="Try!" onClick="ChangeAction('country/' + document.getElementById('inputcountrynameparam').value + '/' + document.getElementById('commodity').value, 'countrynameparam');">
+                        </form>
+                        It returns the values about a single commodity for a given country.
+                    </div>
+                </div>
+            </div>
+
+            <div class="bigassbutton">
+                <a onclick="toggle_visibility('countrynameparam');">/country/{countryname}/{commodity}</a>
+                <div class="right"></div>
+            </div>
+
+        </div>
+         
+        <div class="boxcontainer">
+
+            <div class="right">
+                <div class="box fade-in one" id="acompany">
+                    <div class="quote">
+                         <form id="acompanyform" name="acompanyform">
+                            <input type="button" value="Try!" onClick="ChangeAction('company/', 'acompanyform');">
+                        </form>
+                        It returns a list of companies available on the database.
+                    </div>
+                </div>
+            </div>
+
+            <div class="bigassbutton">
+                <a onclick="toggle_visibility('acompany');">/company</a>
+                <div class="right"></div>
+            </div>
+
+             </div>
+
+          <div class="boxcontainer">
+
+            <div class="right">
+                <div class="box fade-in one" id="onecountry-companyname">
+                    <div class="quote">
+                       
+                    
+                            <form id="onecountrynameparam" name="onecountrynameparam">
+                             
+                            <input type="text" id="oneinputcountrynameparam1" name="oneinputcountrynameparam1" placeholder="companyname">
+                            
+                            <input type="button" value="Try!" onClick="ChangeAction('company/' + document.getElementById('oneinputcountrynameparam1').value, 'onecountrynameparam');">
+                        </form>
+                        It returns all available information for a single company.
+</div>
+                </div>
+            </div>
+
+            <div class="bigassbutton">
+                <a onclick="toggle_visibility('companyname');">/company/{company name}</a>
+                <div class="right"></div>
+            </div>
+
+        </div>
+
+         <div class="boxcontainer">
+
+            <div class="right">
+                <div class="box fade-in one" id="country-companyname">
+                    <div class="quote">
+                       
+                    
+                            <form id="countrynameparam" name="countrynameparam">
+                             
+                            <input type="text" id="inputcountrynameparam1" name="inputcountrynameparam1" placeholder="companyname">
+                            <input type="text" id="field1" name="field1" placeholder="field">
+                            <input type="button" value="Try!" onClick="ChangeAction('company/' + document.getElementById('inputcountrynameparam1').value + '/' + document.getElementById('field1').value, 'countrynameparam');">
+                        </form>
+                        It returns values about a given company for a single field of operations (e.g. "downstream").
+</div>
+                </div>
+            </div>
+
+            <div class="bigassbutton">
+                <a onclick="toggle_visibility('companyname');">/company/{company name}/{field}</a>
+                <div class="right"></div>
+            </div>
+
+        </div>
+
+                  <div class="boxcontainer">
+
+            <div class="right">
+                <div class="box fade-in one" id="country-companyname">
+                    <div class="quote">
+                       
+                    
+                            <form id="twocountrynameparam" name="twocountrynameparam">
+                             
+                            <input type="text" id="twoinputcountrynameparam1" name="twoinputcountrynameparam1" placeholder="companyname">
+                            <input type="text" id="twofield1" name="twofield1" placeholder="field">
+                                <input type="text" id="twoyear" name="twoyear" placeholder="year">
+                            <input type="button" value="Try!" onClick="ChangeAction('company/' + document.getElementById('twoinputcountrynameparam1').value + '/' + document.getElementById('twofield1').value + '/' + document.getElementById('twoyear').value, 'twocountrynameparam');">
+                        </form>
+                        It returns values about a given company for a single field of operations in a year (e.g. "downstream").
+</div>
+                </div>
+            </div>
+
+            <div class="bigassbutton">
+                <a onclick="toggle_visibility('companyname');">/company/{company name}/{field}/{year}</a>
+                <div class="right"></div>
+            </div>
+
+        </div>
+
+        <div class="boxcontainer">
+
+            <div class="right">
+                <div class="box fade-in one" id="value"><div class="quote">
+
+                    
+               
+                    
+                <form id="valueform" name="valueform">
+                    <input type="text" id="countryname" name="countryname" placeholder="countryname">
+                    <input type="text" id="commodity" name="commodity" placeholder="commodity">
+                    <input type="text" id="min" name="min" placeholder="Min"/>
+                    <input type="text" id="max" name="max" placeholder="Max"/>
+                    <input type="button" value="Try!" onClick="ChangeAction('value/country/' + document.getElementById('countryname').value + '/' + document.getElementById('commodity').value + '/' + document.getElementById('min').value + '/' + document.getElementById('max').value, 'valueform');">
+                </form>
+                    It searches entries about a given parametre for a commodity within a range. For example, indep_source_production_volume for Oil.
+                </div>
+            </div>
+ </div>
+            <div class="bigassbutton">
+                <a onclick="toggle_visibility('value');"> /value/country/{commodity}/{param}/{min}/{max} </a>
+                <div class="right"></div>
+            </div>
+
+        </div>
+
+
+
+
+         <div class="boxcontainer">
+
+            <div class="right">
+                <div class="box fade-in one" id="value"><div class="quote">
+
+                    
+                
+                    
+                <form id="valueform11" name="valueform11">
+                    <input type="text" id="field2" name="field2" placeholder="field">
+                    <input type="text" id="year2" name="year2" placeholder="year2">
+                    <input type="text" id="min2" name="min2" placeholder="Min"/>
+                    <input type="text" id="max2" name="max2" placeholder="Max"/>
+                    <input type="button" value="Try!" onClick="ChangeAction('value/company/' + document.getElementById('field2').value + '/' + document.getElementById('year2').value + '/' + document.getElementById('min2').value + '/' + document.getElementById('max2').value, 'valueform11');">
+                </form>
+                    It searches entries within range of values for a given field of enterprise, relative to a single year. For example, "downstream".
+                </div>
+            </div>
+                </div>
+            <div class="bigassbutton">
+                <a onclick="toggle_visibility('value');">/value/company/{field}/{year}/{min}/{max}</a>
+                <div class="right"></div>
+            </div>
+
+        </div>
+
+    </body>
+</html>
