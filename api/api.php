@@ -4,8 +4,8 @@
 function returnJSON($name) {
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: *');
-$filecontents = file_get_contents("/docs/".$name);
-print "FILE".$filecontents."$name";
+$filecontents = file_get_contents($name);
+print $filecontents;
 }
 
 function returnXBRL() {
