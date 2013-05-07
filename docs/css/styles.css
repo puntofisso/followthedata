@@ -1,0 +1,46 @@
+h1 {
+    margin-bottom: 20px;
+}
+
+.boxcontainer {
+    background-color: #d9d9d9;
+    border-radius: 5px;
+    width: 50%;
+    padding: 20px;
+    margin-bottom:10px;
+    height: 250px;
+}
+
+.right {
+    float: right;
+    width: 50%;
+    vertical-align: middle;
+}
+
+.bigassbutton {
+    background-color: #0094ff;
+    width: 40%;
+    border-radius: 3px;
+    font-weight: lighter;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 13px;
+    padding-bottom: 12px;
+    color: White;
+    font-size: 1em;
+    text-align: center;
+}
+
+a {
+    color: white;
+   
+}
+
+.quote{
+    border-radius: 3px;
+    background-color: #808080;
+    color: #fff;
+    padding: 5px;
+}
+
+
